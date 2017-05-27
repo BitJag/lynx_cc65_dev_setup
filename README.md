@@ -16,8 +16,7 @@ Afterwards, the CC65 (c library and compiler for the lynx) is cloned, built, and
 from the git repository.  
 
 The script will then install mednafen, the "lynxboot.img" (required to run lynx games
-in the emulator), and grafx2 (used to convert PCX image files created by the Gimp into 
-a PCX format that sprpck will accept).
+in the emulator), gcc and git.
 
 The script will then create a file structure in your home folder for lynx programing
 called "lynx" where a \"blank_project\" template will be copied to.  You can choose
@@ -29,12 +28,12 @@ built by cc65 into object files that can be linked with your program.
 
 There is no warrantee for this script, so please use it at your own risk.
 
-Tested successfully in Kubuntu 16.10 - Jan 4th, 2017
+Tested successfully in Kubuntu 16.10 - May 7th, 2017
 
 ----------------------------------------------------
 
 INSTALL
-To Install just run the "sh ./install.sh" in the same director as the script file.  You will 
+To Install just run the "sh ./install.sh" in the same directory as the script file.  You will 
 need to enter your user password once. The process is mostly automatic, with just one
 comfirmation at the beginning.
 
@@ -61,5 +60,4 @@ started doing this.  https://atarilynxdeveloper.wordpress.com/series/atarilynxpr
 
 TODO
 ----------------------------------------------------
-Implement a music building pipeline into install process (chipper and & build rules in Make file).
-Iron out current graphics pipeline (Can't build from PCX files out of gimp unfortunately).
+Add Chipper to finish a basic music/sfx creation pipeline.

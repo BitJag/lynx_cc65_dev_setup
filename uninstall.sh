@@ -10,7 +10,7 @@ NC='\033[0m'
 
 echo "\n${CYAN}Removing cc65, mednafen, sprpck, and updating repositories...\n${NC}"
 
-sudo apt-get remove -y mednafen grafx2
+sudo apt-get remove -y mednafen
 
 sudo rm -rv /usr/share/cc65
 

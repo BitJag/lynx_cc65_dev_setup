@@ -26,8 +26,7 @@ Afterwards, the CC65 (c library and compiler for the lynx) is cloned, built, and
 from the git repository.  
 
 The script will then install mednafen, the \"lynxboot.img\" (required to run lynx games
-in the emulator), and grafx2 (used to convert PCX image files created by the Gimp into 
-a PCX format that sprpck will accept).
+in the emulator), gcc, and git.
 
 The script will then create a file structure in your home folder for lynx programing
 called \"lynx\" where a \"blank_project\" template will be copied to.  You can choose
@@ -45,11 +44,11 @@ echo -n "\n${GREEN}Do you wish to install the Atari Lynx CC65 developement envir
 read answer
 if echo "$answer" | grep -iq "^y" ;then
 
-    #update repos and install mednafen and grafx2
+    #update repos and install mednafen, gcc, and git.
 
     sudo apt-get update
 
-    sudo apt-get install -y --allow-unauthenticated make gcc git mednafen grafx2
+    sudo apt-get install -y --allow-unauthenticated make gcc git mednafen
     
     mkdir -v ~/.mednafen
 
@@ -85,19 +84,21 @@ if echo "$answer" | grep -iq "^y" ;then
     
     mkdir -v ~/lynx
     
-    mkdir -v ~/lynx/bin
-    
     mkdir -v ~/lynx/projects
     
     cp -r ./blank_project ~/lynx/projects/
     
     #Build and install sprpck program
     
-    echo "\n${CYAN}Building and install \"sprpck\" to \"/usr/bin/\".\n${NC}"
+    echo "\n${CYAN}Downloading, building and installing \"sprpck\" to \"/usr/bin/\".\n${NC}"
     
-    unzip ./src/sprpck_src.zip -d ./src/
+    wget https://github.com/kateflower/sprpck/archive/master.zip
     
-    cd ./src/sprpck_src/
+    unzip master.zip
+    
+    rm -v master.zip
+    
+    cd sprpck*
     
     make
     
@@ -105,7 +106,7 @@ if echo "$answer" | grep -iq "^y" ;then
     
     cd ..
     
-    sudo rm -rv ./sprpck_src
+    sudo rm -rv ./sprpck*
     
     cd ..
     

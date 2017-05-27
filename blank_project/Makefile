@@ -17,7 +17,4 @@ $(target) : $(objects)
 	$(CL) -t $(SYS) -o $@ $(objects)
 	
 clean:
-# 	rm $(target) $(objects) #currently don't have a way to build graphics with a rule, so we don't want to remove the object files in the "gfx" and "sound" folders.
-	rm -f *.s 
-	rm -f *.o 
-	rm -f *.lnx
+	rm $(target) $(objects)
