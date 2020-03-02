@@ -1,7 +1,5 @@
 ****LYNX CC65 DEV ENVIRONEMENT SETUP SCRIPT****
 
-by Will Thorup of BitJag
-
 
 ----------------------------------------------------
 
